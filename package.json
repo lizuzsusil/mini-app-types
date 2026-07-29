@@ -1,0 +1,23 @@
+{
+  "name": "mini-app-types",
+  "version": "1.0.0",
+  "description": "Shared type definitions for GSA Mini App SDK – consumed by the SDK itself, host shells, and mini apps",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --declaration --emitDeclarationOnly --outDir dist",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "~7.0.2"
+  }
+}
