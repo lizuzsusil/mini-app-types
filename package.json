@@ -1,6 +1,6 @@
 {
   "name": "@lizuz/mini-app-types",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Shared type definitions for GSA Mini App SDK – consumed by the SDK itself, host shells, and mini apps",
   "type": "module",
   "types": "./dist/index.d.ts",
@@ -15,7 +15,8 @@
   ],
   "scripts": {
     "build": "tsc --declaration --emitDeclarationOnly --outDir dist",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm clean && pnpm  build"
   },
   "devDependencies": {
     "typescript": "~7.0.2"

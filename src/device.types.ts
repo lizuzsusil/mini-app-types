@@ -54,6 +54,12 @@ export interface DeviceFileResult {
   file: FileModule[];
 }
 
+export interface DeviceDownloadOptions extends DeviceExtraOptions {
+  url: string;
+  fileName: string;
+  mimeType?: string;
+}
+
 export interface DeviceDownloadResult {
   file: FileModule;
 }
@@ -107,7 +113,7 @@ export interface DeviceSdkModule {
     options?: DeviceFileOptions,
   ): Promise<DevicePermissionBaseResponse<DeviceFileResult>>;
   download(
-    options?: DeviceExtraOptions,
+    options?: DeviceDownloadOptions,
   ): Promise<DevicePermissionBaseResponse<DeviceDownloadResult>>;
   biometric(options?: DeviceBiometricOptions): Promise<DeviceBiometricResult>;
   notifications(
