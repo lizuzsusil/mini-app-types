@@ -1,10 +1,10 @@
-import type { PlatformTypeLiteral } from './core.types';
+import type { PlatformTypeLiteral } from "./core.types";
 
 export type DevicePermissionStatus =
-  | 'granted'
-  | 'denied'
-  | 'permanentlyDenied'
-  | 'restricted';
+  | "granted"
+  | "denied"
+  | "permanentlyDenied"
+  | "restricted";
 
 export interface DevicePermissionBaseResponse<T> {
   status: DevicePermissionStatus;
@@ -54,6 +54,10 @@ export interface DeviceFileResult {
   file: FileModule[];
 }
 
+export interface DeviceDownloadResult {
+  file: FileModule;
+}
+
 export interface DeviceNotificationResult {
   enabled: boolean;
   token?: string;
@@ -61,7 +65,7 @@ export interface DeviceNotificationResult {
 
 export interface DeviceNetworkResult {
   online: boolean;
-  type?: 'wifi' | 'cellular' | 'none';
+  type?: "wifi" | "cellular" | "none";
   effectiveType?: string;
 }
 
@@ -90,12 +94,25 @@ export interface DeviceNotificationsOptions {
 }
 
 export interface DeviceSdkModule {
-  camera(options?: DeviceExtraOptions): Promise<DevicePermissionBaseResponse<DeviceCameraResult>>;
-  location(options?: DeviceExtraOptions): Promise<DevicePermissionBaseResponse<DeviceLocationResult>>;
-  gallery(options?: DeviceFileOptions): Promise<DevicePermissionBaseResponse<DeviceGalleryResult>>;
-  files(options?: DeviceFileOptions): Promise<DevicePermissionBaseResponse<DeviceFileResult>>;
+  camera(
+    options?: DeviceExtraOptions,
+  ): Promise<DevicePermissionBaseResponse<DeviceCameraResult>>;
+  location(
+    options?: DeviceExtraOptions,
+  ): Promise<DevicePermissionBaseResponse<DeviceLocationResult>>;
+  gallery(
+    options?: DeviceFileOptions,
+  ): Promise<DevicePermissionBaseResponse<DeviceGalleryResult>>;
+  files(
+    options?: DeviceFileOptions,
+  ): Promise<DevicePermissionBaseResponse<DeviceFileResult>>;
+  download(
+    options?: DeviceExtraOptions,
+  ): Promise<DevicePermissionBaseResponse<DeviceDownloadResult>>;
   biometric(options?: DeviceBiometricOptions): Promise<DeviceBiometricResult>;
-  notifications(options?: DeviceNotificationsOptions): Promise<DeviceNotificationResult>;
+  notifications(
+    options?: DeviceNotificationsOptions,
+  ): Promise<DeviceNotificationResult>;
   network(): Promise<DeviceNetworkResult>;
   info(): Promise<DeviceInfoResult>;
 }
