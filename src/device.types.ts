@@ -51,7 +51,7 @@ export interface DeviceGalleryResult {
 }
 
 export interface DeviceFileResult {
-  file: FileModule[];
+  files: FileModule[];
 }
 
 export interface DeviceDownloadOptions extends DeviceExtraOptions {
