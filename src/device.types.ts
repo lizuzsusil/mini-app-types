@@ -64,6 +64,11 @@ export interface DeviceDownloadResult {
   file: FileModule;
 }
 
+export interface DeviceContactResult {
+  contactName?: string;
+  number?: number;
+}
+
 export interface DeviceNotificationResult {
   enabled: boolean;
   token?: string;
@@ -115,6 +120,9 @@ export interface DeviceSdkModule {
   download(
     options?: DeviceDownloadOptions,
   ): Promise<DevicePermissionBaseResponse<DeviceDownloadResult>>;
+  contact(
+    options?: DeviceExtraOptions,
+  ): Promise<DevicePermissionBaseResponse<DeviceContactResult>>;
   biometric(options?: DeviceBiometricOptions): Promise<DeviceBiometricResult>;
   notifications(
     options?: DeviceNotificationsOptions,
