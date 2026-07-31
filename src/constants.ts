@@ -46,7 +46,7 @@ export const ACTIONS = {
   DEVICE: {
     LOCATION: 'location', CAMERA: 'camera', GALLERY: 'gallery',
     FILES: 'files', BIOMETRIC: 'biometric', NOTIFICATIONS: 'notifications',
-    NETWORK: 'network', INFO: 'info',
+    NETWORK: 'network', INFO: 'info', CONTACT: 'contact',
   },
   HTTP: { GET: 'get', POST: 'post', PUT: 'put', PATCH: 'patch', DELETE: 'delete' },
   STORAGE: { GET: 'get', SET: 'set', REMOVE: 'remove' },
