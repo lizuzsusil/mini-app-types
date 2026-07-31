@@ -66,7 +66,7 @@ export interface DeviceDownloadResult {
 
 export interface DeviceContactResult {
   contactName?: string;
-  number?: number;
+  number?: string;
 }
 
 export interface DeviceNotificationResult {
