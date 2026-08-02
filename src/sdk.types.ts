@@ -7,6 +7,7 @@ import type { DeviceSdkModule } from './device.types';
 import type { StorageSdkModule } from './storage.types';
 import type { HttpSdkModule } from './http.types';
 import type { ApiSdkModule } from './api.types';
+import type { AppearanceSdkModule } from './appearance.types';
 
 export interface MiniAppSdkInterface {
   readonly miniAppId: string;
@@ -25,6 +26,7 @@ export interface MiniAppSdkInterface {
   device: DeviceSdkModule;
   api: ApiSdkModule;
   http: HttpSdkModule;
+  appearance: AppearanceSdkModule;
 
   initialize(): Promise<void>;
   destroy(): void;
