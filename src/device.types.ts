@@ -123,7 +123,7 @@ export interface DeviceSdkModule {
   contact(
     options?: DeviceExtraOptions,
   ): Promise<DevicePermissionBaseResponse<DeviceContactResult>>;
-  biometric(options?: DeviceBiometricOptions): Promise<DeviceBiometricResult>;
+  biometric(options?: DeviceBiometricOptions): Promise<DevicePermissionBaseResponse<DeviceBiometricResult>>;
   notifications(
     options?: DeviceNotificationsOptions,
   ): Promise<DeviceNotificationResult>;
