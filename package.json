@@ -1,6 +1,6 @@
 {
   "name": "@lizuz/mini-app-types",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Shared type definitions for GSA Mini App SDK – consumed by the SDK itself, host shells, and mini apps",
   "type": "module",
   "types": "./dist/index.d.ts",
