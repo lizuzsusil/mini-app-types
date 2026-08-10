@@ -8,6 +8,7 @@ import type { StorageSdkModule } from './storage.types';
 import type { HttpSdkModule } from './http.types';
 import type { ApiSdkModule } from './api.types';
 import type { AppearanceSdkModule } from './appearance.types';
+import type { ChatSdkModule } from './chat.types';
 
 export interface MiniAppSdkInterface {
   readonly miniAppId: string;
@@ -27,7 +28,7 @@ export interface MiniAppSdkInterface {
   api: ApiSdkModule;
   http: HttpSdkModule;
   appearance: AppearanceSdkModule;
-
+  ai: ChatSdkModule
   initialize(): Promise<void>;
   destroy(): void;
   on(event: string, handler: EventHandler): () => void;

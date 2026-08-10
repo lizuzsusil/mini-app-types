@@ -22,3 +22,10 @@ export interface ModelCompletionOptions {
     maxTokens?: number;
     [key:string]: unknown;
 }
+
+export interface ChatSdkModule {
+    chat(
+        messages: ChatMessage[],
+        options?: ModelCompletionOptions,
+    ): Promise<AsyncIterator<string | Uint8Array>>
+}
