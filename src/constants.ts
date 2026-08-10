@@ -14,6 +14,7 @@ export const NAMESPACES = {
   NAVIGATION: 'navigation',
   PLATFORM: 'platform',
   DEVICE: 'device',
+  AI: 'ai',
   API: 'api',
   STORAGE: 'storage',
   HTTP: 'http',
@@ -36,6 +37,7 @@ export const SDK_CAPABILITIES: readonly string[] = [
   NAMESPACES.API,
   NAMESPACES.HTTP,
   NAMESPACES.APPEARANCE,
+  NAMESPACES.AI
 ];
 
 export const ACTIONS = {
@@ -43,6 +45,7 @@ export const ACTIONS = {
   PERMISSIONS: { HAS: 'has', LIST: 'list' },
   FLAGS: { IS_ENABLED: 'isEnabled', GET_ALL: 'getAll' },
   CONFIG: { GET: 'get', GET_ALL: 'getAll' },
+  AI : {CHAT: 'chat'},
   NAVIGATION: { NAVIGATE: 'navigate', GET_CURRENT: 'getCurrent' },
   PLATFORM: { GET_TYPE: 'getType' },
   DEVICE: {
