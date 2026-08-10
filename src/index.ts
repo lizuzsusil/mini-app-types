@@ -11,3 +11,4 @@ export * from './appearance.types';
 export * from './sdk.types';
 export * from './message.types';
 export * from './constants';
+export * from "./chat.types";
