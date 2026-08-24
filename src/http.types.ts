@@ -46,9 +46,10 @@ export interface HttpSdkModule {
   put<T, B = unknown>(params: HttpPutParams<B>): Promise<HttpResult<T>>;
   patch<T, B = unknown>(params: HttpPatchParams<B>): Promise<HttpResult<T>>;
   delete<T>(params: HttpDeleteParams): Promise<HttpResult<T>>;
+  getStream<T>(params: HttpGetParams): Promise<T>;
   stream<T>(params: {
     messages: ChatMessage[],
     options?: ModelCompletionOptions,
     requestOptions?: ChatRequestOptions
-  } ):Promise<AsyncIterable<string | Uint8Array>>
+  } ):Promise<T>
 }
