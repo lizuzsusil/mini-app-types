@@ -16,6 +16,10 @@ export interface ChatMessage {
     content: string; 
 }
 
+export interface ChatRequestOptions {
+    signal?: AbortSignal
+}
+
 export interface ModelCompletionOptions {
     model?:string;
     temperature?:number;
@@ -27,5 +31,6 @@ export interface ChatSdkModule {
     chat(
         messages: ChatMessage[],
         options?: ModelCompletionOptions,
+        requestOptions?: ChatRequestOptions
     ): Promise<AsyncIterator<string | Uint8Array>>
 }
