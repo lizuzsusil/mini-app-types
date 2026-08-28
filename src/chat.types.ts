@@ -32,5 +32,5 @@ export interface ChatSdkModule {
         messages: ChatMessage[],
         options?: ModelCompletionOptions,
         requestOptions?: ChatRequestOptions
-    ): Promise<AsyncIterator<string | Uint8Array>>
+    ): Promise<unknown>
 }

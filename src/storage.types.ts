@@ -40,4 +40,6 @@ export interface StorageSdkModule {
    * yields `a:b:c:key`).
    */
   scoped(prefix: string): StorageSdkModule;
+  getMany?(keys: string[]): Promise<Array<string | null>>;
+  getManyJson?<T = unknown>(keys: string[]): Promise<Array<T | null>>;
 }

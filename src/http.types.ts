@@ -42,14 +42,14 @@ export interface HttpResult<T = unknown> {
 
 export interface HttpSdkModule {
   get<T>(params: HttpGetParams): Promise<HttpResult<T>>;
-  post<T, B = unknown>(params: HttpPostParams<B>): Promise<HttpResult<T>>;
-  put<T, B = unknown>(params: HttpPutParams<B>): Promise<HttpResult<T>>;
-  patch<T, B = unknown>(params: HttpPatchParams<B>): Promise<HttpResult<T>>;
+  post<T, B = unknown>(params: HttpPostParams<B>, options?: HttpUploadOptions): Promise<HttpResult<T>>;
+  put<T, B = unknown>(params: HttpPutParams<B>, options?: HttpUploadOptions): Promise<HttpResult<T>>;
+  patch<T, B = unknown>(params: HttpPatchParams<B>, options?: HttpUploadOptions): Promise<HttpResult<T>>;
   delete<T>(params: HttpDeleteParams): Promise<HttpResult<T>>;
   getStream<T>(params: HttpGetParams): Promise<T>;
   stream<T>(params: {
     messages: ChatMessage[],
     options?: ModelCompletionOptions,
     requestOptions?: ChatRequestOptions
-  } ):Promise<T>
+  } ): Promise<T>
 }

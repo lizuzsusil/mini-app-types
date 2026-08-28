@@ -19,6 +19,7 @@ export interface NavigationRouterSkdModule {
   push(consumed?:boolean) : Promise<NavigationRouterResult>
 }
 
+export type NavigationRouterSdkModule = NavigationRouterSkdModule;
 
 export interface NavigationSdkModule {
   navigate(target: NavigationTarget): Promise<void>;

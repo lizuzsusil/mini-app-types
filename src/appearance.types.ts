@@ -46,3 +46,8 @@ export interface AppearanceSdkModule {
   /** Subscribe to `appearance.locale.changed` / `appearance.theme.changed`. */
   subscribe(listener: (state: AppearanceState) => void): () => void;
 }
+
+export type AppearanceType = {
+  theme?: string | ThemeState;
+  locale?: string | LocaleState;
+};

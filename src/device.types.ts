@@ -104,6 +104,22 @@ export interface DeviceNotificationsOptions {
   [key: string]: unknown;
 }
 
+export type DeviceAction =
+  | 'location'
+  | 'camera'
+  | 'gallery'
+  | 'files'
+  | 'download'
+  | 'contact'
+  | 'biometric'
+  | 'notifications'
+  | 'network'
+  | 'info'
+  | 'share'
+  | 'clipboard'
+  | 'haptics'
+  | 'review';
+
 export interface DeviceSdkModule {
   camera(
     options?: DeviceExtraOptions,
@@ -129,4 +145,12 @@ export interface DeviceSdkModule {
   ): Promise<DeviceNotificationResult>;
   network(): Promise<DeviceNetworkResult>;
   info(): Promise<DeviceInfoResult>;
+  share?(data: { title?: string; text?: string; url?: string }): Promise<{ completed: boolean }>;
+  clipboardWrite?(text: string): Promise<void>;
+  clipboardRead?(): Promise<string>;
+  haptics?(style: 'light' | 'medium' | 'heavy' | 'selection'): Promise<void>;
+}
+
+export interface DeviceSdkModuleWithGuards extends DeviceSdkModule {
+  isSupported(action: DeviceAction): boolean;
 }
