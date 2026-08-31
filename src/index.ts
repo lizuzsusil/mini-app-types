@@ -3,7 +3,6 @@ export * from "./appearance.types";
 export * from "./auth.types";
 export * from "./chat.types";
 export * from "./config.types";
-export * from "./constants";
 export * from "./core.types";
 export * from "./device.types";
 export * from "./gic-chat.types";

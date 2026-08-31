@@ -1,7 +1,6 @@
 import type { ApiSdkModule } from "./api.types";
 import type { AppearanceSdkModule } from "./appearance.types";
 import type { AuthSdkModule, PermissionsSdkModule } from "./auth.types";
-import type { ChatSdkModule } from "./chat.types";
 import type { ConfigSdkModule, FlagsSdkModule } from "./config.types";
 import type {
 	EventHandler,
@@ -14,7 +13,6 @@ import type {
 	SdkEventMap,
 } from "./core.types";
 import type { DeviceSdkModuleWithGuards } from "./device.types";
-import type { GicChatSdkModule } from "./gic-chat.types";
 import type { HttpSdkModule } from "./http.types";
 import type { LinksSdkModule } from "./link.types";
 import type { NavigationSdkModule } from "./navigation.types";
@@ -41,11 +39,8 @@ export interface MiniAppSdkInterface {
 	api: ApiSdkModule;
 	http: HttpSdkModule;
 	appearance: AppearanceSdkModule;
-	ai: ChatSdkModule;
-	readonly chat: ChatSdkModule;
 	notifications: NotificationsSdkModule;
 	links: LinksSdkModule;
-	gicChat: GicChatSdkModule;
 	readonly debug: SdkDebug;
 
 	initialize(): Promise<void>;

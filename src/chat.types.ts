@@ -11,6 +11,7 @@ export interface StreamError {
     retryable?: boolean
 }
 
+/** Generic chat — NOT GIC. For GIC use GicChat* in gic-chat.types.ts */
 export interface ChatMessage {
     role: "user" | "system";
     content: string; 
@@ -27,6 +28,7 @@ export interface ModelCompletionOptions {
     [key:string]: unknown;
 }
 
+/** Generic chat module — HTTP.CHAT_STREAM with ChatMessage[] (kept for host ShellServiceMap, not exposed via SDK's MiniAppSdk.chat) */
 export interface ChatSdkModule {
     chat(
         messages: ChatMessage[],
@@ -34,3 +36,4 @@ export interface ChatSdkModule {
         requestOptions?: ChatRequestOptions
     ): Promise<unknown>
 }
+

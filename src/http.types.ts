@@ -46,7 +46,9 @@ export interface HttpSdkModule {
   put<T, B = unknown>(params: HttpPutParams<B>, options?: HttpUploadOptions): Promise<HttpResult<T>>;
   patch<T, B = unknown>(params: HttpPatchParams<B>, options?: HttpUploadOptions): Promise<HttpResult<T>>;
   delete<T>(params: HttpDeleteParams): Promise<HttpResult<T>>;
+  /** File/binary streaming — HTTP.GET_STREAM, Uint8Array chunks */
   getStream<T>(params: HttpGetParams): Promise<T>;
+  /** Generic chat streaming — HTTP.CHAT_STREAM (alias HTTP.STREAM) with ChatMessage[]; GIC uses GicChatSdkModule via GIC_CHAT.STREAM (gated by HTTP) */
   stream<T>(params: {
     messages: ChatMessage[],
     options?: ModelCompletionOptions,
