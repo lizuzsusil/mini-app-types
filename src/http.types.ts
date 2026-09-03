@@ -1,6 +1,6 @@
 import { ChatMessage, ChatRequestOptions, ModelCompletionOptions } from "./chat.types";
 
-export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
+export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'WEBSOCKET';
 
 export type Headers = Record<string, string>;
 export type Query = Record<string, string>;
@@ -53,5 +53,7 @@ export interface HttpSdkModule {
     messages: ChatMessage[],
     options?: ModelCompletionOptions,
     requestOptions?: ChatRequestOptions
-  } ): Promise<T>
+  } ): Promise<T>;
+  /** WebSocket connection — HTTP.WEBSOCKET */
+  websocket(params: HttpGetParams): Promise<WebSocket>;
 }

@@ -62,6 +62,8 @@ export interface DeviceDownloadOptions extends DeviceExtraOptions {
 
 export interface DeviceDownloadResult {
   file: FileModule;
+  /** Web-only: true when written via File System Access API, false when handed to browser download manager */
+  saved?: boolean;
 }
 
 export interface DeviceContactResult {
@@ -71,12 +73,14 @@ export interface DeviceContactResult {
 
 export interface DeviceNotificationResult {
   enabled: boolean;
+  /** @deprecated alias for `enabled` — some hosts return `granted` */
+  granted?: boolean;
   token?: string;
 }
 
 export interface DeviceNetworkResult {
   online: boolean;
-  type?: "wifi" | "cellular" | "none";
+  type?: "wifi" | "cellular" | "none" | "ethernet" | "unknown";
   effectiveType?: string;
 }
 
@@ -87,6 +91,8 @@ export interface DeviceInfoResult {
   deviceModel?: string;
   screenWidth?: number;
   screenHeight?: number;
+  locale?: string;
+  timezone?: string;
 }
 
 export interface DeviceBiometricOptions {
@@ -97,6 +103,8 @@ export interface DeviceBiometricOptions {
 export interface DeviceBiometricResult {
   success: boolean;
   error?: string;
+  /** Which biometric prompt was shown, when host can determine it */
+  method?: "face" | "fingerprint" | "biometric";
 }
 
 export interface DeviceNotificationsOptions {
