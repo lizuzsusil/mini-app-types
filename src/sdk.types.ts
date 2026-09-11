@@ -1,7 +1,7 @@
 import type { ApiSdkModule } from "./api.types";
 import type { AppearanceSdkModule } from "./appearance.types";
 import type { AuthSdkModule, PermissionsSdkModule } from "./auth.types";
-import type { ConfigSdkModule, FlagsSdkModule } from "./config.types";
+import type { ConfigSdkModule } from "./config.types";
 import type {
 	EventHandler,
 	HeartbeatOptions,
@@ -30,8 +30,8 @@ export interface MiniAppSdkInterface {
 	readonly capabilityVersions: Readonly<Record<string, string>>;
 
 	auth: AuthSdkModule;
+	/** @deprecated `sdk.permissions` is deprecated and will be removed in a future major version. Use capability-based checks instead. */
 	permissions: PermissionsSdkModule;
-	flags: FlagsSdkModule;
 	config: ConfigSdkModule;
 	navigation: NavigationSdkModule;
 	storage: StorageSdkModule;
