@@ -5,8 +5,6 @@ export * from "./chat.types";
 export * from "./config.types";
 export * from "./core.types";
 export * from "./device.types";
-export * from "./gic-chat.types";
-export * from "./http.types";
 export * from "./link.types";
 export * from "./logger.types";
 export * from "./message.types";

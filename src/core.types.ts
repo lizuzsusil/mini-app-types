@@ -1,5 +1,5 @@
 import type { AppearanceType, LocaleState, ThemeState } from "./appearance.types";
-import type { HttpProgress } from "./http.types";
+import type { ApiUploadProgress } from "./api.types";
 import type { LinksOpenedEvent } from "./link.types";
 import type { NotificationOpenEvent } from "./notification.types";
 
@@ -35,7 +35,7 @@ export interface SdkEventMap {
   };
   'connection.lost': { timestamp: number };
   'connection.established': { timestamp: number };
-  'http.uploadProgress': HttpProgress;
+	'api.uploadProgress': ApiUploadProgress;
   'notifications.token': string;
   'notifications.opened': NotificationOpenEvent;
   'links.opened': LinksOpenedEvent;

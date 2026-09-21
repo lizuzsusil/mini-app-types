@@ -1,14 +1,19 @@
-import type { HttpMethod } from './http.types';
+export type ApiRequestMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
-export type ApiRequestParams<TBody = unknown> = {
-  method?: 'POST';
-  body: { method: 'POST'; path: string } & TBody;
-  headers?: Record<string, string>;
-} | {
-  method?: Exclude<HttpMethod, 'POST'>;
+export interface ApiUploadProgress {
+  uploadedBytes: number;
+  totalBytes?: number;
+}
+
+export interface ApiRequestParams<TBody = unknown> {
+  path?: string;
+  query?: Record<string, string>;
   body?: TBody;
   headers?: Record<string, string>;
-};
+  stream?: boolean;
+  signal?: AbortSignal;
+  onProgress?: (progress: ApiUploadProgress) => void;
+}
 
 export interface ApiResult<T = unknown> {
   status: number;
@@ -17,5 +22,13 @@ export interface ApiResult<T = unknown> {
 }
 
 export interface ApiSdkModule {
-  request<T = unknown, B = unknown>(params?: ApiRequestParams<B>): Promise<ApiResult<T>>;
+  request<T = unknown, B = unknown>(
+    method: string,
+    params: ApiRequestParams<B> & { stream: true },
+  ): Promise<T>;
+  
+  request<T = unknown, B = unknown>(
+    method?: string,
+    params?: ApiRequestParams<B>,
+  ): Promise<ApiResult<T>>;
 }
