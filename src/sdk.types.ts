@@ -19,7 +19,7 @@ import type { NotificationsSdkModule } from "./notification.types";
 import type { PlatformSdkModule } from "./platform.types";
 import type { StorageSdkModule } from "./storage.types";
 
-export interface MiniAppSdkInterface {
+export interface SewaPlatformSdkInterface {
 	readonly miniAppId: string;
 	readonly version: string;
 	readonly traceId: string;
@@ -128,7 +128,7 @@ export interface MiniAppSdkInterface {
 export interface SdkPlugin {
 	name: string;
 	install(ctx: {
-		sdk: MiniAppSdkInterface;
+		sdk: SewaPlatformSdkInterface;
 		rpc: any;
 		logger: any;
 	}): void | Promise<void>;
@@ -139,10 +139,10 @@ export interface SdkPlugin {
 export interface CreateInstanceOptions {
 	miniAppId: string;
 	channel?: string;
-	sdkOptions?: MiniAppSdkOptions;
+	sdkOptions?: SewaPlatformSdkOptions;
 }
 
-export interface MiniAppSdkOptions {
+export interface SewaPlatformSdkOptions {
 	miniAppId: string;
 	timeout?: number;
 	retryAttempts?: number;
