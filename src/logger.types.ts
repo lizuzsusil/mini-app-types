@@ -1,6 +1,3 @@
-/**
- * Logger options — shared between SDK and host for consistent redaction.
- */
 export type LoggerLevel = 'debug' | 'info' | 'warn' | 'error';
 
 export interface ConsoleLoggerOptions {

@@ -62,7 +62,6 @@ export interface DeviceDownloadOptions extends DeviceExtraOptions {
 
 export interface DeviceDownloadResult {
   file: FileModule;
-  /** Web-only: true when written via File System Access API, false when handed to browser download manager */
   saved?: boolean;
 }
 
